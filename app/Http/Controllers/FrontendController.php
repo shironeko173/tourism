@@ -219,13 +219,13 @@ class FrontendController extends Controller
         }
 
         $data[] = [
-            'source'      => $row['source'] ?? (string) $source,
-            'nama_tempat' => $row['nama_tempat'] ?? 'N/A',
-            'lokasi'      => $row['lokasi'] ?? 'N/A',
-            'deskripsi'   => $row['deskripsi'] ?? 'N/A',
+            'source'      => $row->source ?? (string) $source,
+            'nama_tempat' => $row->nama_tempat ?? 'N/A',
+            'lokasi'      => $row->lokasi ?? 'N/A',
+            'deskripsi'   => $row->deskripsi ?? 'N/A',
             'gambar'      => $gambar,
-            'lat'         => $row['lat'] ?? null,
-            'long'        => $row['long'] ?? null,
+            'lat'         => $row->lat ?? null,
+            'long'        => $row->long ?? null,
         ];
     }
     $result = collect($data);
