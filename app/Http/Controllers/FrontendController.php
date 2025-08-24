@@ -179,7 +179,15 @@ class FrontendController extends Controller
 
         OPTIONAL { <'.$source.'> dbo:thumbnail ?img . }
         OPTIONAL { ?location rdfs:label ?locationLabel . }
+
+        FILTER (lang(?name) IN ("id","en"))
+        FILTER (lang(?desc) IN ("id","en"))
+        FILTER (lang(?locationLabel) IN ("id","en"))
         }
+        ORDER BY 
+        (lang(?name) = "id") DESC
+        (lang(?desc) = "id") DESC
+        (lang(?locationLabel) = "id") DESC
         LIMIT 1
         ';
 
