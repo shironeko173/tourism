@@ -165,7 +165,7 @@
 
                     
                   <div class="input-group rounded">
-                    <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="mysearch" />
+                    <input type="text" class="form-control rounded" placeholder="Search by nama negara" aria-label="Search" aria-describedby="search-addon" name="mysearch" />
                     <button type="submit" class="input-group-text" style="background-color: #14bf98;height: 38px;" id="search-addon">
                       <i class="fas fa-search" style="color: white;"></i>
                     </button>

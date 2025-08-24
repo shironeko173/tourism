@@ -187,51 +187,7 @@ class FrontendController extends Controller
         LIMIT 1
         ';
 
-        $results = $sparql->query($query);
-
-        foreach ($results as $row) {
-        $gambar = !empty($row->gambar) ? (string) $row->gambar : null;
-
-
-         if (empty($gambar) && !empty($row->nama_tempat)) {
-            $wikiTitle = urlencode($row->nama_tempat);
-
-            $wikiResponse = Http::get("https://en.wikipedia.org/w/api.php", [
-                'action'      => 'query',
-                'titles'      => $wikiTitle,
-                'prop'        => 'pageimages',
-                'format'      => 'json',
-                'pithumbsize' => 500
-            ]);
-
-            if ($wikiResponse->ok()) {
-                $wikiData = $wikiResponse->json();
-
-                foreach ($wikiData['query']['pages'] ?? [] as $page) {
-                    if (isset($page['thumbnail']['source'])) {
-                        $gambar = $page['thumbnail']['source'];
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (empty(trim($gambar))) {
-            $gambar = asset('images/placeholder.jpg');
-        }
-
-        $data[] = [
-            'source'      => isset($row->source->value) ? (string) $row->source->value : (string) $source,
-            'nama_tempat' => isset($row->nama_tempat->value) ? (string) $row->nama_tempat->value : 'N/A',
-            'lokasi'      => isset($row->lokasi->value) ? (string) $row->lokasi->value : 'N/A',
-            'deskripsi'   => isset($row->deskripsi->value) ? (string) $row->deskripsi->value : 'N/A',
-            'gambar'      => $gambar,
-            'lat'         => isset($row->lat->value) ? (string) $row->lat->value : null,
-            'long'        => isset($row->long->value) ? (string) $row->long->value : null,
-        ];
-    }
-    $result = collect($data);
-
+        $result = $sparql->query($query);
 
   
         // dd($result);
