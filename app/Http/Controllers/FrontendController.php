@@ -15,9 +15,9 @@ class FrontendController extends Controller
     {
         $i = 1;
         $j = 1;
-        // $baseUrl = config('app.url');
-        $graph = new \EasyRdf\Graph();
-        $graph->parseFile(public_path('rdfFile/recommend.rdf'), 'rdfxml');
+        $baseUrl = config('app.url');
+        $graph = new \EasyRdf\Graph($baseUrl . '/rdfFile/recommend.rdf');
+        dd($graph->load());
         $doc = $graph->primaryTopic();
         // //   Deklarasi namespace
         \EasyRdf\RdfNamespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
