@@ -195,31 +195,7 @@ class FrontendController extends Controller
             // 1. Ambil gambar dari DBpedia (jika ada)
             $gambar = !empty($row->gambar) ? (string) $row->gambar : null;
 
-            // 2. Kalau kosong, coba ambil dari Wikipedia
-            if (empty($gambar) && !empty($row->nama_tempat)) {
-                $wikiTitle = urlencode($row->nama_tempat);
-
-                $wikiResponse = Http::get("https://en.wikipedia.org/w/api.php", [
-                    'action'      => 'query',
-                    'titles'      => $wikiTitle,
-                    'prop'        => 'pageimages',
-                    'format'      => 'json',
-                    'pithumbsize' => 500
-                ]);
-
-                if ($wikiResponse->ok()) {
-                    $wikiData = $wikiResponse->json();
-
-                    foreach ($wikiData['query']['pages'] ?? [] as $page) {
-                        if (isset($page['thumbnail']['source'])) {
-                            $gambar = $page['thumbnail']['source'];
-                            break;
-                        }
-                    }
-                }
-            }
-
-            // 3. Kalau masih kosong, pakai placeholder
+             //  Kalau masih kosong, pakai placeholder
             if (empty(trim($gambar))) {
                 $gambar = asset('images/placeholder.jpg');
             }
