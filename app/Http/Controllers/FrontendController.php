@@ -190,10 +190,11 @@ class FrontendController extends Controller
         $results = $sparql->query($query);
 
         foreach ($results as $row) {
-        $gambar = !empty($row['gambar']) ? (string) $row['gambar'] : null;
+        $gambar = !empty($row->gambar) ? (string) $row->gambar : null;
 
-        if (empty($gambar) && !empty($row['nama_tempat'])) {
-            $wikiTitle = urlencode($row['nama_tempat']);
+
+         if (empty($gambar) && !empty($row->nama_tempat)) {
+            $wikiTitle = urlencode($row->nama_tempat);
 
             $wikiResponse = Http::get("https://en.wikipedia.org/w/api.php", [
                 'action'      => 'query',
@@ -205,6 +206,7 @@ class FrontendController extends Controller
 
             if ($wikiResponse->ok()) {
                 $wikiData = $wikiResponse->json();
+
                 foreach ($wikiData['query']['pages'] ?? [] as $page) {
                     if (isset($page['thumbnail']['source'])) {
                         $gambar = $page['thumbnail']['source'];
