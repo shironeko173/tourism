@@ -7,109 +7,109 @@
          xmlns:dc="http://purl.org/dc/terms/">
 
 <!-- Sesuaikan dengan lokasi rdf file di htdocs XAMPP, apabila pakai default port cukup http://localhost/...... -->
-  <foaf:RecommendDocument rdf:about="http://localhost:8003/rdfFile/recommend.rdf">
+  <foaf:RecommendDocument rdf:about="https://tourism.up.railway.app/rdfFile/recommend.rdf">
     <rdfs:label>Recommend Destination</rdfs:label>
-    <foaf:maker rdf:resource="http://localhost:8003/rdfFile/"/>
-    <foaf:primaryTopic rdf:resource="http://localhost:8003/rdfFile/"/>
+    <foaf:maker rdf:resource="https://tourism.up.railway.app/rdfFile/"/>
+    <foaf:primaryTopic rdf:resource="https://tourism.up.railway.app/rdfFile/"/>
   </foaf:RecommendDocument>
 
-  <foaf:Recommend rdf:about="http://localhost:8003/rdfFile/">
+  <foaf:Recommend rdf:about="https://tourism.up.railway.app/rdfFile/">
 
     <foaf:Asia> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#asia1">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#asia1">
         <foaf:id>1</foaf:id>
         <foaf:placeName>Nusa Penida</foaf:placeName>
         <foaf:placeLocation>Bali, Indonesia</foaf:placeLocation>
         <foaf:desc1>Nusa Penida berada di Provinsi bali, terletak di sebelah Tenggara dan dipisahkan oleh Selat Badung.</foaf:desc1>
         <foaf:desc2>Nusa Penida terkenal dengan pantai-pantai berpasir putih dan juga pemandangan alam yang memukau. Mulai dari tebing-tebing tinggi hingga pemandangan bawah laut yang cantik.</foaf:desc2>
         <foaf:qoute>Salah satu pantai yang ikonik di Nusa Penida adalah Pantai Kelingking. Pantai ini memiliki tebing hijau seperti bentuk dinosaurus. </foaf:qoute>
-        <foaf:image rdf:resource="http://localhost:8003/rdfFile/images/asia1.jpg"/>
+        <foaf:image rdf:resource="https://tourism.up.railway.app/rdfFile/images/asia1.jpg"/>
       </foaf:touristDestination>
     </foaf:Asia>
     
     <foaf:Asia> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#asia2">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#asia2">
         <foaf:id>2</foaf:id>
         <foaf:placeName>Labuan Bajo</foaf:placeName>
         <foaf:placeLocation>Nusa Tenggara Timur, Indonesia</foaf:placeLocation>
         <foaf:desc1>Labuan Bajo merupakan salah satu kota yang berada di kecamatan Komodo, Kabupaten Manggarai Barat, provinsi Nusa Tenggara Timur, Indonesia.</foaf:desc1>
         <foaf:desc2>Labuan Bajo dan Taman Nasional Komodo adalah satu entitas yang tidak dapat terpisahkan. Di Taman Nasional Komodo, akan disuguhkan beberapa atraksi yang menakjubkan. Salah satunya adalah berfoto bersama Komodo.</foaf:desc2>
         <foaf:qoute>Salah satu ikonik lainnya ialah Pink Beach atau yang dikenal sebagai Pantai Merah. Warna merah di pantai ini ternyata berasal dari hewan mikroskopis dan pecahan batu karang berwarna kemerahan di sekitar pesisir pantai.</foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/asia2.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/asia2.jpeg"/>
       </foaf:touristDestination>
     </foaf:Asia>
     
     <foaf:Asia> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#asia3">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#asia3">
         <foaf:id>3</foaf:id>
         <foaf:placeName>Raja Ampat</foaf:placeName>
         <foaf:placeLocation>Papua, Indonesia</foaf:placeLocation>
         <foaf:desc1>Kabupaten Raja Ampat adalah salah satu kabupaten di provinsi Papua Barat  </foaf:desc1>
         <foaf:desc2>Daya, Indonesia. Kepulauan ini sekarang menjadi tujuan para penyelam yang tertarik akan keindahan pemandangan bawah lautnya. Yang gemar diving dan snorkeling, wilayah perairan Raja Ampat adalah salah satu destinasi diving terbaik di dunia.</foaf:desc2>
         <foaf:qoute>Tak hanya keindahan bawah lautnya yang luar biasa, pemandangan di atas permukaan juga tak kalah memesona. Panorama deretan pulau-pulau batu di tengah gradasi air biru terlihat begitu surgawi saat dilihat dari atas bukit.</foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/asia3.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/asia3.jpeg"/>
       </foaf:touristDestination>
     </foaf:Asia>
 
     <foaf:Asia> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#asia4">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#asia4">
         <foaf:id>4</foaf:id>
         <foaf:placeName>Gunung Fuji</foaf:placeName>
         <foaf:placeLocation>Honshu, Jepang</foaf:placeLocation>
         <foaf:desc1>Gunung Fuji, terletak di pulau Honshu, adalah gunung tertinggi di Jepang, dengan ketinggian 3.776,24 m. </foaf:desc1>
         <foaf:desc2>Gunung ini adalah gunung berapi tertinggi kedua yang terletak di sebuah pulau di benua Asia, dan puncak tertinggi ketujuh dari sebuah pulau di Bumi.</foaf:desc2>
         <foaf:qoute>Gunung ini biasanya digunakan sebagai ikon budaya Jepang dan sering digambarkan dalam karya seni dan fotografi, serta dikunjungi oleh banyak wisatawan dan pendaki.</foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/asia4.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/asia4.jpeg"/>
       </foaf:touristDestination>
     </foaf:Asia>
 
 
     <foaf:Afrika> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#afrika1">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#afrika1">
         <foaf:id>5</foaf:id>
         <foaf:placeName>Piramida Giza</foaf:placeName>
         <foaf:placeLocation>Mesir</foaf:placeLocation>
         <foaf:desc1>Piramida Giza merupakan peninggalan dari era Kerajaan Lama Mesir yang dibangun sekitar 4.500 tahun yang lalu.</foaf:desc1>
         <foaf:desc2>Dibangun oleh Firaun Khufu, Piramida Giza berdiri setinggi 138 meter dan merupakan struktur buatan manusia tertinggi di dunia hingga Katedral Lincoln selesai dibangun di Inggris pada abad ke-14.</foaf:desc2>
         <foaf:qoute>Piramida Agung Giza adalah piramida tertua dan terbesar dari tiga piramida yang ada di Nekropolis Giza dan merupakan satu-satunya bangunan yang masih menjadi bagian dari Tujuh Keajaiban Dunia.</foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/afrika1.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/afrika1.jpeg"/>
       </foaf:touristDestination>
     </foaf:Afrika>
 
 
     <foaf:Eropa> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#eropa1">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#eropa1">
         <foaf:id>6</foaf:id>
         <foaf:placeName>Menara Eiffel</foaf:placeName>
         <foaf:placeLocation>Paris, Prancis</foaf:placeLocation>
         <foaf:desc1>Menara Eiffel sebelumnya bernama Menara Paris merupakan sebuah menara besi yang dibangun di Champ de Mars di tepi Sungai Seine, Paris. </foaf:desc1>
         <foaf:desc2>Menara ini terdiri dari 18.038 bagian dari besi, 2,5 juta paku, 7.300 ton besi, dan 60 ton cat saat pembangunannya.</foaf:desc2>
         <foaf:qoute>Menara ini telah menjadi ikon global Prancis dan salah satu struktur paling terkenal di dunia yang merupakan simbol pertemuan sepasang kekasih. </foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/eropa1.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/eropa1.jpeg"/>
       </foaf:touristDestination>
     </foaf:Eropa>
     
     <foaf:Eropa> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#eropa2">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#eropa2">
         <foaf:id>7</foaf:id>
         <foaf:placeName>Kincir Angin Raksasa</foaf:placeName>
         <foaf:placeLocation>Belanda</foaf:placeLocation>
         <foaf:desc1>Belanda disebut negara kincir angin karena Belanda memiliki lebih dari 1.200 kincir angin. Dalam sejarahnya, kincir angin memiliki peranan sangat penting karena berfungsi untuk memompa air keluar dari dataran rendah kembali ke sungai. </foaf:desc1>
         <foaf:desc2>Sebanyak 26 persen wilayah Belanda berada di ketinggian yang lebih rendah dari permukaan air laut. </foaf:desc2>
         <foaf:qoute>Kincir angin dipilih karena ramah lingkungan dan memanfaatkan tenaga angin sebagai sumber energinya.</foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/eropa2.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/eropa2.jpeg"/>
       </foaf:touristDestination>
     </foaf:Eropa>
 
     <foaf:Australia> 
-      <foaf:touristDestination rdf:about="http://localhost:8003/rdfFile/#australia1">
+      <foaf:touristDestination rdf:about="https://tourism.up.railway.app/rdfFile/#australia1">
         <foaf:id>8</foaf:id>
         <foaf:placeName>Gedung Opera Sydney</foaf:placeName>
         <foaf:placeLocation>Sydney, Australia</foaf:placeLocation>
         <foaf:desc1>Arsitektur unik Gedung Opera Sydney terdiri atas serangkaian bangunan yang menyerupai kerang putih. Struktur atapnya juga terdiri dari layar yang mengkilap. </foaf:desc1>
         <foaf:desc2>Gedung Opera Sydney adalah satu di antara bangunan-bangunan paling terkenal di dunia. </foaf:desc2>
         <foaf:qoute>Para wisatawan biasanya mengambil foto di tangga Gedung Opera Sydney, serta menjelajahi penampilan luarnya yang megah dan interiornya yang indah.</foaf:qoute>
-        <foaf:image  rdf:resource="http://localhost:8003/rdfFile/images/australia1.jpeg"/>
+        <foaf:image  rdf:resource="https://tourism.up.railway.app/rdfFile/images/australia1.jpeg"/>
       </foaf:touristDestination>
     </foaf:Australia>
 
