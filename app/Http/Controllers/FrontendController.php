@@ -189,6 +189,48 @@ class FrontendController extends Controller
 
         $results = $sparql->query($query);
 
+        foreach ($results as $row) {
+        $gambar = !empty($row['gambar']) ? (string) $row['gambar'] : null;
+
+        if (empty($gambar) && !empty($row['nama_tempat'])) {
+            $wikiTitle = urlencode($row['nama_tempat']);
+
+            $wikiResponse = Http::get("https://en.wikipedia.org/w/api.php", [
+                'action'      => 'query',
+                'titles'      => $wikiTitle,
+                'prop'        => 'pageimages',
+                'format'      => 'json',
+                'pithumbsize' => 500
+            ]);
+
+            if ($wikiResponse->ok()) {
+                $wikiData = $wikiResponse->json();
+                foreach ($wikiData['query']['pages'] ?? [] as $page) {
+                    if (isset($page['thumbnail']['source'])) {
+                        $gambar = $page['thumbnail']['source'];
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (empty(trim($gambar))) {
+            $gambar = asset('images/placeholder.jpg');
+        }
+
+        $data[] = [
+            'source'      => $row['source'] ?? (string) $source,
+            'nama_tempat' => $row['nama_tempat'] ?? 'N/A',
+            'lokasi'      => $row['lokasi'] ?? 'N/A',
+            'deskripsi'   => $row['deskripsi'] ?? 'N/A',
+            'gambar'      => $gambar,
+            'lat'         => $row['lat'] ?? null,
+            'long'        => $row['long'] ?? null,
+        ];
+    }
+    $result = collect($data);
+
+
   
         // dd($result);
 
