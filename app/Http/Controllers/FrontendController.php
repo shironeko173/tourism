@@ -17,6 +17,7 @@ class FrontendController extends Controller
         $j = 1;
         $graph = new \EasyRdf\Graph(); // Kosongkan constructor
         $graph->parseFile(public_path('rdfFile/recommend.rdf'), 'rdfxml');
+        dd($graph);
         $doc = $graph->primaryTopic();
         
         // //   Deklarasi namespace
