@@ -189,31 +189,7 @@ class FrontendController extends Controller
 
         $results = $sparql->query($query);
 
-        $data = [];
-
-        foreach ($results as $row) {
-            // 1. Ambil gambar dari DBpedia (jika ada)
-            $gambar = !empty($row->gambar) ? (string) $row->gambar : null;
-
-             //  Kalau masih kosong, pakai placeholder
-            if (empty(trim($gambar))) {
-                $gambar = asset('images/placeholder.jpg');
-            }
-
-            // 4. Susun hasil akhir
-            $data[] = [
-                'source'      => isset($row->source) ? (string) $row->source : (string) $source,
-                'nama_tempat' => isset($row->nama_tempat) ? (string) $row->nama_tempat : 'N/A',
-                'lokasi'      => isset($row->lokasi) ? (string) $row->lokasi : 'N/A',
-                'deskripsi'   => isset($row->deskripsi) ? (string) $row->deskripsi : 'N/A',
-                'gambar'      => $gambar,
-                'lat'         => isset($row->lat) ? (string) $row->lat : null,
-                'long'        => isset($row->long) ? (string) $row->long : null,
-            ];
-        }
-
-        $result = collect($data);
-
+  
         // dd($result);
 
       
