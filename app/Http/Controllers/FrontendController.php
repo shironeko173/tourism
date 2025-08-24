@@ -158,8 +158,7 @@ class FrontendController extends Controller
       // //    Asal pengambilan data
       $sparql = new \EasyRdf\Sparql\Client('https://dbpedia.org/sparql');
 
-      $source = $request->src;
-      // dd($source);
+        $source = $request->src;
 
         $query = '
         SELECT DISTINCT
@@ -180,18 +179,16 @@ class FrontendController extends Controller
         OPTIONAL { <'.$source.'> dbo:thumbnail ?img . }
         OPTIONAL { ?location rdfs:label ?locationLabel . }
 
-        FILTER (lang(?name) IN ("id","en"))
-        FILTER (lang(?desc) IN ("id","en"))
-        FILTER (lang(?locationLabel) IN ("id","en"))
+        # Ambil hanya label & deskripsi berbahasa Inggris atau Indonesia
+        FILTER ( langMatches(lang(?name), "en") || langMatches(lang(?name), "id") )
+        FILTER ( langMatches(lang(?desc), "en") || langMatches(lang(?desc), "id") )
+        FILTER ( langMatches(lang(?locationLabel), "en") || langMatches(lang(?locationLabel), "id") )
         }
-        ORDER BY 
-        (lang(?name) = "id") DESC
-        (lang(?desc) = "id") DESC
-        (lang(?locationLabel) = "id") DESC
         LIMIT 1
         ';
 
         $result = $sparql->query($query);
+
   
         // dd($result);
 
