@@ -20,7 +20,7 @@ class FrontendController extends Controller
         $graph->parseFile(public_path('rdfFile/recommend.rdf'), 'rdfxml');
         $doc = $graph->primaryTopic();
 
-        dd($doc);
+        dd($graph);
         // //   Deklarasi namespace
         \EasyRdf\RdfNamespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
         \EasyRdf\RdfNamespace::set('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
