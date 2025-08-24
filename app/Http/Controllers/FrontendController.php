@@ -15,10 +15,12 @@ class FrontendController extends Controller
     {
         $i = 1;
         $j = 1;
-        $graph = new \EasyRdf\Graph(); // Kosongkan constructor
+        $graph = new \EasyRdf\Graph();
         $graph->parseFile(public_path('rdfFile/recommend.rdf'), 'rdfxml');
-        dd($graph);
-        $doc = $graph->primaryTopic();
+
+        // Cara 1: Ambil resource utama berdasarkan URI
+        $mainResource = $graph->resource('https://tourism.up.railway.app/rdfFile/recommend.rdf');
+        dd($mainResource->all());
         
         // //   Deklarasi namespace
         \EasyRdf\RdfNamespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
