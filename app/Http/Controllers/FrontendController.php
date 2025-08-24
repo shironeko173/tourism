@@ -15,10 +15,10 @@ class FrontendController extends Controller
     {
         $i = 1;
         $j = 1;
-        $baseUrl = config('app.url');
-        $graph = new \EasyRdf\Graph($baseUrl . '/rdfFile/recommend.rdf');
-        dd($graph->load());
+        $graph = new \EasyRdf\Graph(); // Kosongkan constructor
+        $graph->parseFile(public_path('rdfFile/recommend.rdf'), 'rdfxml');
         $doc = $graph->primaryTopic();
+        
         // //   Deklarasi namespace
         \EasyRdf\RdfNamespace::set('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#');
         \EasyRdf\RdfNamespace::set('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
