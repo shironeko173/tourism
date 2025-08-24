@@ -160,19 +160,31 @@ class FrontendController extends Controller
 
       $source = $request->src;
       // dd($source);
-      $result = $sparql->query(
-          'SELECT DISTINCT (SAMPLE(?nama) as ?nama_tempat) (SAMPLE(?loc) as ?lokasi) (SAMPLE(?descr) as ?deskripsi) (MAX(?lats) as ?lat) (MAX(?longs) as ?long) (SAMPLE(?images) as ?gambar) WHERE{'.
-          '<'.$source.'> rdfs:label ?nama.'.
-          '<'.$source.'> dbp:location ?loc.'.
-          '<'.$source.'> rdfs:comment ?descr.'. 
-          '<'.$source.'> geo:lat ?lats.'.
-          '<'.$source.'> geo:long ?longs.'.
-          '<'.$source.'> <http://dbpedia.org/ontology/thumbnail> ?images.'.
-          'Filter(lang(?nama) = "en").'.
-          'Filter(lang(?loc) = "en").'.
-          'Filter(lang(?descr) = "en").'.
-          '}'
-        );
+
+        $query = '
+        SELECT DISTINCT
+        (SAMPLE(?name) AS ?nama_tempat)
+        (SAMPLE(?locationLabel) AS ?lokasi)
+        (SAMPLE(?desc) AS ?deskripsi)
+        (SAMPLE(?img) AS ?gambar)
+        (SAMPLE(?lat) AS ?lat)
+        (SAMPLE(?long) AS ?long)
+        WHERE {
+        <'.$source.'> a dbo:Place ;
+                        rdfs:label   ?name ;
+                        rdfs:comment ?desc ;
+                        dbo:location ?location ;
+                        geo:lat      ?lat ;
+                        geo:long     ?long .
+
+        OPTIONAL { <'.$source.'> dbo:thumbnail ?img . }
+        OPTIONAL { ?location rdfs:label ?locationLabel . }
+        }
+        LIMIT 1
+        ';
+
+        $result = $sparql->query($query);
+  
         // dd($result);
 
       
