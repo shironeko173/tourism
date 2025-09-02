@@ -16,7 +16,7 @@ class FrontendController extends Controller
         $i = 1;
         $j = 1;
         // $baseUrl = config('app.url');
-        $graph = new \EasyRdf\Graph('https://tourism.up.railway.app/rdfFile/recommend.rdf');
+        $graph = new \EasyRdf\Graph('https://tourism-app.up.railway.app/rdfFile/recommend.rdf');
         $graph->parseFile(public_path('rdfFile/recommend.rdf'), 'rdfxml');
         $doc = $graph->primaryTopic();
 
